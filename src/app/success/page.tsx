@@ -1,3 +1,5 @@
+"use client";
+
 export default function SuccessPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 via-fuchsia-50 to-blue-50">
