@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function SuccessPage() {
   return (
@@ -7,7 +8,7 @@ export default function SuccessPage() {
         <span className="text-5xl mb-4">🎉</span>
         <h1 className="text-3xl font-extrabold text-pink-600 mb-2 text-center">Payment Successful!</h1>
         <p className="text-gray-700 text-center mb-4">Thank you for booking your loyalty test. Our team will contact you soon with the next steps.<br/>Your trust means a lot to us!</p>
-        <a href="/" className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform">Return to Home</a>
+        <Link href="/" className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform">Return to Home</Link>
       </div>
       <style jsx global>{`
         .animate-modal-pop {
