@@ -15,6 +15,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
   const [otpVerified, setOtpVerified] = useState(false);
   const [otpSuccess, setOtpSuccess] = useState<string | null>(null);
   const [agreed, setAgreed] = useState(false);
+  const [countryCode, setCountryCode] = useState("+1");
 
   // Remove handleCheckbox, not needed for radio
 
@@ -63,6 +64,11 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
     setLoading(true);
     setSuccess(null);
     setError(null);
+    if (!otpVerified) {
+      setError("Please verify your email with OTP before proceeding to payment.");
+      setLoading(false);
+      return;
+    }
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = {
@@ -71,7 +77,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
       insta: formData.get("insta") as string,
       partnerName: formData.get("partnerName") as string,
       partnerInsta: formData.get("partnerInsta") as string,
-      phone: formData.get("phone") as string,
+      phone: `${countryCode}${formData.get("phone") as string}`,
       relationship,
       message: formData.get("message") as string,
     };
@@ -150,13 +156,62 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
           <label className="font-medium">Partner&apos;s Instagram ID <span className="text-pink-600">*</span></label>
           <input name="partnerInsta" type="text" placeholder="Partner&apos;s Instagram ID" className="input" required />
           <label className="font-medium">Your Phone Number (WhatsApp) <span className="text-pink-600">*</span></label>
-          <input name="phone" type="tel" placeholder="Your Phone Number (WhatsApp)" className="input" required />
+          <div className="flex gap-2">
+            <select
+              name="countryCode"
+              value={countryCode}
+              onChange={e => setCountryCode(e.target.value)}
+              className="input w-28 px-2 py-2 text-base"
+              required
+            >
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+7">🇷🇺 +7</option>
+              <option value="+234">🇳🇬 +234</option>
+              <option value="+27">🇿🇦 +27</option>
+              <option value="+63">🇵🇭 +63</option>
+              <option value="+62">🇮🇩 +62</option>
+              <option value="+92">🇵🇰 +92</option>
+              <option value="+880">🇧🇩 +880</option>
+              <option value="+20">🇪🇬 +20</option>
+              <option value="+966">🇸🇦 +966</option>
+              <option value="+972">🇮🇱 +972</option>
+              <option value="+82">🇰🇷 +82</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+90">🇹🇷 +90</option>
+              <option value="+48">🇵🇱 +48</option>
+              <option value="+351">🇵🇹 +351</option>
+              <option value="+380">🇺🇦 +380</option>
+              <option value="+1-876">🇯🇲 +1-876</option>
+              <option value="+1-868">🇹🇹 +1-868</option>
+              <option value="+1-246">🇧🇧 +1-246</option>
+              <option value="+1-264">🇦🇮 +1-264</option>
+              <option value="+1-268">🇧🇧 +1-268</option>
+              <option value="+1-473">🇬🇩 +1-473</option>
+              <option value="+1-758">🇱🇨 +1-758</option>
+              <option value="+1-784">🇻🇨 +1-784</option>
+              <option value="+1-809">🇩🇴 +1-809</option>
+              <option value="+1-829">🇩🇴 +1-829</option>
+              <option value="+1-849">🇩🇴 +1-849</option>
+              <option value="+1-868">🇹🇹 +1-868</option>
+              <option value="+1-876">🇯🇲 +1-876</option>
+            </select>
+            <input name="phone" type="tel" placeholder="Your Phone Number (WhatsApp)" className="input flex-1" required />
+          </div>
           <div>
             <label className="block font-semibold mb-1">Your relationship with them: <span className="text-pink-600">*</span></label>
             <div className="flex flex-wrap gap-2">
               {[
                 "Spouse/Legal Partner",
-                "Relationship",
+                "Dating",
                 "Situationship",
                 "Fiancé(e)",
                 "Arrange Marriage Purposes",
