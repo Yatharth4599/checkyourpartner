@@ -136,10 +136,10 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
           <input name="name" type="text" placeholder="Your Name" className="input" required />
           <label className="font-medium">Your Instagram ID <span className="text-pink-600">*</span></label>
           <input name="insta" type="text" placeholder="Your Instagram ID" className="input" required />
-          <label className="font-medium">Your Partner's Name <span className="text-pink-600">*</span></label>
-          <input name="partnerName" type="text" placeholder="Your Partner's Name" className="input" required />
-          <label className="font-medium">Partner's Instagram ID <span className="text-pink-600">*</span></label>
-          <input name="partnerInsta" type="text" placeholder="Partner's Instagram ID" className="input" required />
+          <label className="font-medium">Your Partner&apos;s Name <span className="text-pink-600">*</span></label>
+          <input name="partnerName" type="text" placeholder="Your Partner&apos;s Name" className="input" required />
+          <label className="font-medium">Partner&apos;s Instagram ID <span className="text-pink-600">*</span></label>
+          <input name="partnerInsta" type="text" placeholder="Partner&apos;s Instagram ID" className="input" required />
           <label className="font-medium">Your Phone Number (WhatsApp) <span className="text-pink-600">*</span></label>
           <input name="phone" type="tel" placeholder="Your Phone Number (WhatsApp)" className="input" required />
           <div>

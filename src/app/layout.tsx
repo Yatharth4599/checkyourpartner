@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="w-full flex items-center px-6 py-4 bg-white shadow-sm z-50">
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="CheckMyPartner Logo" width={48} height={48} className="rounded-lg" priority />
             <span className="font-bold text-xl text-gray-900 tracking-tight">checkyourpartner.com</span>
-          </a>
+          </Link>
         </header>
         {children}
       </body>

@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     if (!res.ok) return NextResponse.json({ success: false, message: "Failed to send OTP" }, { status: 500 });
     // For demo, return OTP. In production, do not return OTP to client!
     return NextResponse.json({ success: true, otp });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ success: false, message: "Failed to send OTP" }, { status: 500 });
   }
 } 

@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: "Failed to save to Google Sheets", error: err }, { status: 500 });
     }
     return NextResponse.json({ success: true, message: "Form submitted and saved to Google Sheets!" });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ success: false, message: "Failed to submit form." }, { status: 400 });
   }
 } 
