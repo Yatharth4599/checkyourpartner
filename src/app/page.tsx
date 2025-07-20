@@ -173,7 +173,7 @@ export default function Home() {
       {/* Section 8: Sticky Call to Action Banner */}
       <div id="cta" className="fixed bottom-0 left-0 w-full bg-pink-700 text-white py-4 px-4 flex flex-col sm:flex-row items-center justify-between z-50 shadow-lg">
         <div className="text-lg font-semibold mb-2 sm:mb-0">💔 Don’t wait to find out the hard way. 🕵️ Test your partner’s loyalty now — confidentially.</div>
-        <a href="#pricing" className="bg-white text-pink-700 font-bold py-2 px-6 rounded-full shadow hover:bg-pink-100 transition-all">Get Started – $69 Only</a>
+        <button onClick={() => setModalOpen(true)} className="bg-white text-pink-700 font-bold py-2 px-6 rounded-full shadow hover:bg-pink-100 transition-all">Get Started – $69 Only</button>
       </div>
 
       {/* Footer */}

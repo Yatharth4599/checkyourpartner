@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function ModalForm({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [relationship, setRelationship] = useState<string[]>([]);
+  const [relationship, setRelationship] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -14,12 +14,9 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
   const [otpInput, setOtpInput] = useState("");
   const [otpVerified, setOtpVerified] = useState(false);
   const [otpSuccess, setOtpSuccess] = useState<string | null>(null);
+  const [agreed, setAgreed] = useState(false);
 
-  const handleCheckbox = (value: string) => {
-    setRelationship((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-    );
-  };
+  // Remove handleCheckbox, not needed for radio
 
   async function handleSendOtp(e: React.MouseEvent) {
     e.preventDefault();
@@ -100,7 +97,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
           setError("Payment session creation failed. Please try again.");
         }
         // form.reset();
-        // setRelationship([]);
+        // setRelationship("");
         // setEmail("");
         // setOtpSent(false);
         // setOtpVerified(false);
@@ -167,10 +164,13 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
               ].map((label) => (
                 <label key={label} className="flex items-center gap-1 bg-pink-50 px-3 py-1 rounded-full cursor-pointer text-sm font-medium">
                   <input
-                    type="checkbox"
-                    checked={relationship.includes(label)}
-                    onChange={() => handleCheckbox(label)}
+                    type="radio"
+                    name="relationship"
+                    value={label}
+                    checked={relationship === label}
+                    onChange={() => setRelationship(label)}
                     className="accent-pink-600"
+                    required
                   />
                   {label}
                 </label>
@@ -179,7 +179,18 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
           </div>
           <label className="font-medium">Anything you want to share with us (optional)</label>
           <textarea name="message" placeholder="Anything you want to share with us (optional)" className="input min-h-[80px] resize-y" />
-          <button type="submit" disabled={loading || !otpVerified} className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed">
+          <div className="flex items-center gap-2 mt-2">
+            <input
+              type="checkbox"
+              id="terms"
+              checked={agreed}
+              onChange={e => setAgreed(e.target.checked)}
+              required
+              className="accent-pink-600"
+            />
+            <label htmlFor="terms" className="text-sm text-gray-700">I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline text-pink-600 hover:text-pink-800">Terms and Conditions</a><span className="text-pink-600">*</span></label>
+          </div>
+          <button type="submit" disabled={loading || !otpVerified || !agreed} className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed">
             {loading ? "Submitting..." : "Pay & Start Test"}
           </button>
           {success && <div className="text-green-600 text-center font-semibold mt-2">{success}</div>}
