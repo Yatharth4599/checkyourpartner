@@ -43,7 +43,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
       } else {
         setOtpError(result.message || "Failed to send OTP");
       }
-    } catch (err) {
+    } catch (_err) {
       setOtpError("Failed to send OTP. Try again.");
     } finally {
       setOtpLoading(false);
@@ -96,7 +96,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
       } else {
         setError(result.message || "Something went wrong.");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to submit. Please try again.");
     } finally {
       setLoading(false);
