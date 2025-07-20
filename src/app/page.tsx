@@ -39,7 +39,7 @@ export default function Home() {
       <section className="max-w-2xl mx-auto py-12 px-4 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ever had a gut feeling something&apos;s off?</h2>
         <p className="text-lg mb-2">We test that for you.</p>
-        <p className="text-gray-700">Whether you're in a long-distance relationship, suspicious about someone you met online, or just need peace of mind — we offer a full-fledged Loyalty Test powered by real conversations, social analysis, and cold hard evidence.</p>
+        <p className="text-gray-700">Whether you&apos;re in a long-distance relationship, suspicious about someone you met online, or just need peace of mind — we offer a full-fledged Loyalty Test powered by real conversations, social analysis, and cold hard evidence.</p>
       </section>
 
       {/* Section 3: How It Works */}
@@ -50,7 +50,7 @@ export default function Home() {
             <div className="bg-pink-50 rounded-xl p-6 flex flex-col items-center shadow">
               <span className="text-3xl mb-2">🔹</span>
               <h3 className="font-bold mb-2">Step 1: You give us details</h3>
-              <p className="text-gray-700 text-center text-sm">Your partner's name, social media links, age group, and preferred type.</p>
+              <p className="text-gray-700 text-center text-sm">Your partner&apos;s name, social media links, age group, and preferred type.</p>
             </div>
             <div className="bg-pink-50 rounded-xl p-6 flex flex-col items-center shadow">
               <span className="text-3xl mb-2">🔹</span>
