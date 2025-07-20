@@ -245,7 +245,7 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
             />
             <label htmlFor="terms" className="text-sm text-gray-700">I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline text-pink-600 hover:text-pink-800">Terms and Conditions</a><span className="text-pink-600">*</span></label>
           </div>
-          <button type="submit" disabled={loading || !otpVerified || !agreed} className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed">
+          <button type="submit" disabled={loading || !agreed} className="mt-4 bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 text-white font-bold py-3 rounded-xl shadow-lg text-lg hover:scale-105 transition-transform disabled:opacity-60 disabled:cursor-not-allowed">
             {loading ? "Submitting..." : "Pay & Start Test"}
           </button>
           {success && <div className="text-green-600 text-center font-semibold mt-2">{success}</div>}
