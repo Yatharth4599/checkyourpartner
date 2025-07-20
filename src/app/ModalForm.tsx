@@ -86,13 +86,25 @@ export default function ModalForm({ open, onClose }: { open: boolean; onClose: (
       });
       const result = await res.json();
       if (result.success) {
-        setSuccess("Form submitted successfully! We'll contact you soon.");
-        form.reset();
-        setRelationship([]);
-        setEmail("");
-        setOtpSent(false);
-        setOtpVerified(false);
-        setOtpInput("");
+        // Instead of showing success, trigger Stripe Checkout
+        const stripeRes = await fetch("/api/create-checkout-session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const stripeData = await stripeRes.json();
+        if (stripeData.url) {
+          window.location.href = stripeData.url;
+          return;
+        } else {
+          setError("Payment session creation failed. Please try again.");
+        }
+        // form.reset();
+        // setRelationship([]);
+        // setEmail("");
+        // setOtpSent(false);
+        // setOtpVerified(false);
+        // setOtpInput("");
       } else {
         setError(result.message || "Something went wrong.");
       }

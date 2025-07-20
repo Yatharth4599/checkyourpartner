@@ -32,7 +32,7 @@ export default function Home() {
           <li className="flex items-center gap-2"><span>✅</span> AI + Human tests.</li>
           <li className="flex items-center gap-2"><span>✅</span> No regrets.</li>
         </ul>
-        <button onClick={() => setModalOpen(true)} className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all">Start Loyalty Test — Only ₹4,999 <span className="text-xs font-normal">(Limited Launch Offer)</span></button>
+        <button onClick={() => setModalOpen(true)} className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all">Start Loyalty Test — Only $69 <span className="text-xs font-normal">(Limited Launch Offer)</span></button>
       </section>
 
       {/* Section 2: The Hook */}
@@ -94,8 +94,8 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">🎯 Full Loyalty Test – Limited Launch Offer</h2>
           <div className="mb-4">
-            <span className="text-2xl line-through text-gray-400 mr-2">₹9,999</span>
-            <span className="text-3xl font-extrabold text-pink-600">Now ₹4,999</span>
+            <span className="text-2xl line-through text-gray-400 mr-2">$99</span>
+            <span className="text-3xl font-extrabold text-pink-600">Now $69</span>
             <span className="ml-2 text-base text-green-600 font-semibold">✅</span>
           </div>
           <ul className="text-gray-700 mb-6 text-left inline-block text-base">
@@ -145,7 +145,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Price</td>
-                  <td>₹4,999</td><td>₹10,000+</td><td>₹15,000+</td>
+                  <td>$69</td><td>$100+</td><td>$150+</td>
                 </tr>
               </tbody>
             </table>
@@ -173,7 +173,7 @@ export default function Home() {
       {/* Section 8: Sticky Call to Action Banner */}
       <div id="cta" className="fixed bottom-0 left-0 w-full bg-pink-700 text-white py-4 px-4 flex flex-col sm:flex-row items-center justify-between z-50 shadow-lg">
         <div className="text-lg font-semibold mb-2 sm:mb-0">💔 Don’t wait to find out the hard way. 🕵️ Test your partner’s loyalty now — confidentially.</div>
-        <a href="#pricing" className="bg-white text-pink-700 font-bold py-2 px-6 rounded-full shadow hover:bg-pink-100 transition-all">Get Started – ₹4,999 Only</a>
+        <a href="#pricing" className="bg-white text-pink-700 font-bold py-2 px-6 rounded-full shadow hover:bg-pink-100 transition-all">Get Started – $69 Only</a>
       </div>
 
       {/* Footer */}
