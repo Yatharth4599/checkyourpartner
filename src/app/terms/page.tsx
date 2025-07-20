@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white py-12 px-4">
@@ -109,7 +111,7 @@ export default function TermsPage() {
           </ul>
         </div>
         <div className="mt-8 text-center">
-          <a href="/" className="text-pink-600 underline hover:text-pink-800">Return to Home</a>
+          <Link href="/" className="text-pink-600 underline hover:text-pink-800">Return to Home</Link>
         </div>
       </div>
     </div>
