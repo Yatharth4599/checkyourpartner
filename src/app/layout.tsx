@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "CheckYourPartner.com – Loyalty Test Service",
-  description: "Test your partner's loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
+  description: "Test your partner&apos;s loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
   openGraph: {
     title: "CheckYourPartner.com – Loyalty Test Service",
-    description: "Test your partner's loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
+    description: "Test your partner&apos;s loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
     url: "https://checkyourpartner.com",
     siteName: "CheckYourPartner.com",
     images: [
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CheckYourPartner.com – Loyalty Test Service",
-    description: "Test your partner's loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
+    description: "Test your partner&apos;s loyalty with our confidential, AI-powered service. Get proof, peace of mind, and results in 5 days.",
     images: ["/logo2.jpeg"],
   },
 };
