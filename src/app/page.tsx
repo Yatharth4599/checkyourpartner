@@ -109,25 +109,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 4: Red Flag Bot */}
-      <section className="py-12 px-4 bg-gradient-to-b from-pink-50 to-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">🤖 What Is the Red Flag Bot?</h2>
-          <p className="mb-4 text-gray-700">A custom AI engine that checks:</p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left text-gray-800 mb-4 max-w-xl mx-auto">
-            <li>• Flirty replies</li>
-            <li>• Speed of engagement</li>
-            <li>• Willingness to meet or talk</li>
-            <li>• Social media behavior & bio contradictions</li>
-            <li>• Dating app presence (optional)</li>
-          </ul>
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-2xl font-bold">🔴 Score: <span className="text-pink-600">0-100 Red Flag Meter</span></span>
-            <div className="flex gap-4 text-lg">
-              <span className="text-green-600">Green = Loyal</span>
-              <span className="text-yellow-500">Yellow = Suspicious</span>
-              <span className="text-red-600">Red = 🚩🚩🚩</span>
+      {/* Section 4: Red Flag Score */}
+      <section className="py-16 px-4 bg-gradient-to-b from-pink-50 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">🔴 The Red Flag Score™</h2>
+          <p className="text-xl text-gray-700 mb-8">Your partner gets a <span className="font-bold text-pink-600">0-100 score</span> based on their loyalty behavior</p>
+          
+          {/* Red Flag Score Display */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl mb-8 border-4 border-pink-200">
+            <div className="text-6xl sm:text-8xl font-black mb-4">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-yellow-500 to-red-600">0-100</span>
             </div>
+            <div className="text-2xl font-bold text-gray-800 mb-4">Red Flag Score™</div>
+            
+            {/* Score Meter */}
+            <div className="w-full max-w-2xl mx-auto mb-6">
+              <div className="flex justify-between text-sm font-semibold mb-2">
+                <span className="text-green-600">0</span>
+                <span className="text-yellow-600">50</span>
+                <span className="text-red-600">100</span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-4 mb-2">
+                <div className="bg-gradient-to-r from-green-500 via-yellow-500 to-red-600 h-4 rounded-full"></div>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-green-600 font-bold">LOYAL</span>
+                <span className="text-yellow-600 font-bold">SUSPICIOUS</span>
+                <span className="text-red-600 font-bold">🚩🚩🚩</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* What We Check */}
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="bg-pink-50 rounded-xl p-6">
+              <h3 className="font-bold text-lg mb-3 text-pink-700">📱 Response Analysis</h3>
+              <ul className="text-left text-gray-700 space-y-2">
+                <li>• Flirty reply patterns</li>
+                <li>• Response speed & enthusiasm</li>
+                <li>• Willingness to meet up</li>
+                <li>• Personal info sharing</li>
+              </ul>
+            </div>
+            <div className="bg-pink-50 rounded-xl p-6">
+              <h3 className="font-bold text-lg mb-3 text-pink-700">🔍 Social Media Check</h3>
+              <ul className="text-left text-gray-700 space-y-2">
+                <li>• Dating app presence</li>
+                <li>• Bio contradictions</li>
+                <li>• Recent activity patterns</li>
+                <li>• Relationship status</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-lg text-gray-600">
+            <span className="font-bold text-pink-600">Get your partner's exact score</span> — no more guessing games
           </div>
         </div>
       </section>
@@ -188,7 +224,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Price</td>
-                  <td>$69</td><td>$100+</td><td>$150+</td>
+                  <td>$69</td><td>$250+</td><td>$1500+</td>
                 </tr>
               </tbody>
             </table>
