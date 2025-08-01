@@ -258,7 +258,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-auto py-8 px-4 bg-gray-900 text-gray-200 text-center text-sm flex flex-col gap-2 pb-20">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-2">
-          <a href="#contact" className="hover:underline">Contact Us</a>
+          <a href="mailto:hello@checkyourpartner.com" className="hover:underline">hello@checkyourpartner.com</a>
           <Link href="/terms" className="hover:underline">Terms & Privacy</Link>
         </div>
         <div>“This service is designed for informational and emotional assurance purposes. We do not endorse harassment or illegal monitoring.”</div>
