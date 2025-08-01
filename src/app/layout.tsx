@@ -43,7 +43,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-gray-50 text-gray-900 min-h-screen flex flex-col relative overflow-hidden">
+      <body className="font-sans bg-gray-50 text-gray-900 min-h-screen flex flex-col relative">
         <header className="w-full flex items-center px-6 py-4 bg-white shadow-sm z-50">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="CheckMyPartner Logo" width={48} height={48} className="rounded-lg" priority />

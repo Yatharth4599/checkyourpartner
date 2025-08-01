@@ -7,33 +7,75 @@ import Link from "next/link";
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="font-sans bg-gray-50 text-gray-900 min-h-screen flex flex-col relative overflow-hidden">
+    <div className="font-sans bg-gray-50 text-gray-900 min-h-screen flex flex-col relative">
       <ModalForm open={modalOpen} onClose={() => setModalOpen(false)} />
       {/* Hero Section with Animated Background */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24 overflow-hidden">
-        {/* Animated Pulse/Radar */}
-        <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="animate-pulse-slow rounded-full bg-pink-200/40 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] blur-2xl" />
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100 animate-gradient-shift"></div>
+        
+        {/* Animated Radar/Sonar Rings */}
+        <div className="absolute inset-0 flex items-center justify-center -z-5">
+          {/* Inner Ring - Pink */}
+          <div className="animate-radar-pulse rounded-full border-4 border-pink-500 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]"></div>
+          <div className="absolute animate-radar-pulse-delayed rounded-full border-4 border-pink-400 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px]"></div>
+          
+          {/* Middle Ring - Purple */}
+          <div className="absolute animate-radar-pulse-delayed-2 rounded-full border-4 border-purple-500 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px]"></div>
+          <div className="absolute animate-radar-pulse-delayed-3 rounded-full border-4 border-purple-400 w-[400px] h-[400px] sm:w-[550px] sm:h-[550px]"></div>
+          
+          {/* Outer Ring - Blue */}
+          <div className="absolute animate-radar-pulse-delayed-4 rounded-full border-4 border-blue-500 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px]"></div>
+          <div className="absolute animate-radar-pulse-delayed-5 rounded-full border-4 border-blue-400 w-[550px] h-[550px] sm:w-[750px] sm:h-[750px]"></div>
+          
+          {/* Radar Center Point */}
+          <div className="absolute w-6 h-6 bg-pink-600 rounded-full shadow-lg animate-pulse"></div>
+          <div className="absolute w-3 h-3 bg-white rounded-full"></div>
+          
+          {/* Radar Sweep Line */}
+          <div className="absolute w-2 h-[400px] sm:h-[600px] bg-gradient-to-b from-transparent via-pink-500 to-transparent animate-radar-sweep origin-bottom"></div>
         </div>
+        
+        {/* Floating Particles */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-1/4 top-10 animate-float-slow w-2 h-2 bg-pink-400 rounded-full opacity-60"></div>
+          <div className="absolute right-1/4 top-24 animate-float-medium w-3 h-3 bg-purple-400 rounded-full opacity-50"></div>
+          <div className="absolute left-1/3 bottom-16 animate-float-fast w-1 h-1 bg-blue-400 rounded-full opacity-70"></div>
+          <div className="absolute right-1/3 bottom-8 animate-float-slow w-2 h-2 bg-pink-300 rounded-full opacity-60"></div>
+          <div className="absolute left-1/2 top-1/2 animate-float-medium w-2 h-2 bg-purple-300 rounded-full opacity-50"></div>
+          <div className="absolute right-1/2 top-1/3 animate-float-fast w-1 h-1 bg-blue-300 rounded-full opacity-70"></div>
+          <div className="absolute left-1/6 top-1/2 animate-float-slow w-3 h-3 bg-pink-500 rounded-full opacity-40"></div>
+          <div className="absolute right-1/6 bottom-1/3 animate-float-medium w-2 h-2 bg-purple-500 rounded-full opacity-50"></div>
+        </div>
+        
         {/* Animated Floating Hearts */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <span className="absolute left-1/4 top-10 animate-heart-float text-pink-400 text-4xl">♥</span>
-          <span className="absolute right-1/4 top-24 animate-heart-float2 text-pink-300 text-2xl">♥</span>
-          <span className="absolute left-1/3 bottom-16 animate-heart-float3 text-pink-500 text-3xl">♥</span>
-          <span className="absolute right-1/3 bottom-8 animate-heart-float text-pink-400 text-2xl">♥</span>
-          <span className="absolute left-1/2 top-1/2 animate-heart-float2 text-pink-300 text-5xl">♥</span>
+          <span className="absolute left-1/4 top-10 animate-heart-float text-pink-400 text-4xl drop-shadow-lg">♥</span>
+          <span className="absolute right-1/4 top-24 animate-heart-float2 text-pink-300 text-2xl drop-shadow-lg">♥</span>
+          <span className="absolute left-1/3 bottom-16 animate-heart-float3 text-pink-500 text-3xl drop-shadow-lg">♥</span>
+          <span className="absolute right-1/3 bottom-8 animate-heart-float text-pink-400 text-2xl drop-shadow-lg">♥</span>
+          <span className="absolute left-1/2 top-1/2 animate-heart-float2 text-pink-300 text-5xl drop-shadow-lg">♥</span>
+          <span className="absolute right-1/2 top-1/3 animate-heart-float3 text-purple-400 text-3xl drop-shadow-lg">♥</span>
+          <span className="absolute left-1/6 bottom-1/4 animate-heart-float text-blue-400 text-2xl drop-shadow-lg">♥</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 drop-shadow-lg">
-          <span className="block text-4xl sm:text-6xl font-black tracking-tight mb-2">checkyourpartner.com</span>
-          <span className="block text-lg sm:text-2xl font-semibold text-gray-800 mt-2">Test Their Loyalty Before You Waste Your Time</span>
-        </h1>
-        <p className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 drop-shadow">&quot;We test your partner&apos;s loyalty — so your heart doesn&apos;t get broken.&quot;</p>
-        <ul className="flex flex-col sm:flex-row gap-2 justify-center items-center text-pink-600 text-lg mb-8">
-          <li className="flex items-center gap-2"><span>✅</span> Get proof.</li>
-          <li className="flex items-center gap-2"><span>✅</span> AI + Human tests.</li>
-          <li className="flex items-center gap-2"><span>✅</span> No regrets.</li>
-        </ul>
-        <button onClick={() => setModalOpen(true)} className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all">Start Loyalty Test — Only $69 <span className="text-xs font-normal">(Limited Launch Offer)</span></button>
+        
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 -z-20 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-grid-move"></div>
+        </div>
+        <div className="relative z-10">
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-fuchsia-600 to-blue-600 drop-shadow-lg">
+            <span className="block text-4xl sm:text-6xl font-black tracking-tight mb-2">checkyourpartner.com</span>
+            <span className="block text-lg sm:text-2xl font-semibold text-gray-800 mt-2">Test Their Loyalty Before You Waste Your Time</span>
+          </h1>
+          <p className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 drop-shadow">&quot;We test your partner&apos;s loyalty — so your heart doesn&apos;t get broken.&quot;</p>
+          <ul className="flex flex-col sm:flex-row gap-2 justify-center items-center text-pink-600 text-lg mb-8">
+            <li className="flex items-center gap-2"><span>✅</span> Get proof.</li>
+            <li className="flex items-center gap-2"><span>✅</span> Real Human tests (Not AI 😉)</li>
+            <li className="flex items-center gap-2"><span>✅</span> No regrets.</li>
+          </ul>
+          <button onClick={() => setModalOpen(true)} className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all">Start Loyalty Test — Only $69 <span className="text-xs font-normal">(Limited Launch Offer)</span></button>
+        </div>
       </section>
 
       {/* Section 2: The Hook */}
@@ -178,7 +220,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-auto py-8 px-4 bg-gray-900 text-gray-200 text-center text-sm flex flex-col gap-2">
+      <footer className="mt-auto py-8 px-4 bg-gray-900 text-gray-200 text-center text-sm flex flex-col gap-2 pb-20">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-2">
           <a href="#contact" className="hover:underline">Contact Us</a>
           <Link href="/terms" className="hover:underline">Terms & Privacy</Link>

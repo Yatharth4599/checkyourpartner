@@ -24,3 +24,156 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Animations */
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+@keyframes pulse-slow-delayed {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.15); opacity: 0.5; }
+}
+
+@keyframes pulse-slow-delayed-2 {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.2); opacity: 0.4; }
+}
+
+@keyframes heart-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes heart-float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes heart-float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(8deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-30px) translateX(10px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(-15px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-15px) translateX(5px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+@keyframes radar-pulse {
+  0% { 
+    transform: scale(0.5); 
+    opacity: 1; 
+    border-width: 4px;
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 0.6; 
+    border-width: 3px;
+  }
+  100% { 
+    transform: scale(1.8); 
+    opacity: 0; 
+    border-width: 1px;
+  }
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation Classes */
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow-delayed {
+  animation: pulse-slow-delayed 4s ease-in-out infinite 1s;
+}
+
+.animate-pulse-slow-delayed-2 {
+  animation: pulse-slow-delayed-2 4s ease-in-out infinite 2s;
+}
+
+.animate-heart-float {
+  animation: heart-float 6s ease-in-out infinite;
+}
+
+.animate-heart-float2 {
+  animation: heart-float2 8s ease-in-out infinite 1s;
+}
+
+.animate-heart-float3 {
+  animation: heart-float3 7s ease-in-out infinite 2s;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 6s ease-in-out infinite 1s;
+}
+
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite 2s;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 10s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 3s ease-out infinite;
+}
+
+.animate-radar-pulse-delayed {
+  animation: radar-pulse 3s ease-out infinite 0.5s;
+}
+
+.animate-radar-pulse-delayed-2 {
+  animation: radar-pulse 3s ease-out infinite 1s;
+}
+
+.animate-radar-pulse-delayed-3 {
+  animation: radar-pulse 3s ease-out infinite 1.5s;
+}
+
+.animate-radar-pulse-delayed-4 {
+  animation: radar-pulse 3s ease-out infinite 2s;
+}
+
+.animate-radar-pulse-delayed-5 {
+  animation: radar-pulse 3s ease-out infinite 2.5s;
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 4s linear infinite;
+}
