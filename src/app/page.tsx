@@ -163,7 +163,7 @@ export default function Home() {
           </div>
           
           <div className="mt-8 text-lg text-gray-600">
-            <span className="font-bold text-pink-600">Get your partner's exact score</span> — no more guessing games
+            <span className="font-bold text-pink-600">Get your partner&apos;s exact score</span> — no more guessing games
           </div>
         </div>
       </section>
@@ -251,7 +251,7 @@ export default function Home() {
 
       {/* Section 8: Sticky Call to Action Banner */}
       <div id="cta" className="fixed bottom-0 left-0 w-full bg-pink-700 text-white py-4 px-4 flex flex-col sm:flex-row items-center justify-between z-50 shadow-lg">
-        <div className="text-lg font-semibold mb-2 sm:mb-0">💔 Don’t wait to find out the hard way. 🕵️ Test your partner’s loyalty now — confidentially.</div>
+        <div className="text-lg font-semibold mb-2 sm:mb-0">💔 Don&apos;t wait to find out the hard way. 🕵️ Test your partner&apos;s loyalty now — confidentially.</div>
         <button onClick={() => setModalOpen(true)} className="bg-white text-pink-700 font-bold py-2 px-6 rounded-full shadow hover:bg-pink-100 transition-all">Get Started – $69 Only</button>
       </div>
 
